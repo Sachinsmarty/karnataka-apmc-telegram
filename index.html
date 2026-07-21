@@ -95,44 +95,47 @@ select, button {
 </a>
 
 <script>
+async function showRate() {
 
-function showRate() {
+  var district = document.getElementById("district").value;
+  var apmc = document.getElementById("apmc").value;
+  var crop = document.getElementById("crop").value;
 
-var district = document.getElementById("district").value;
-var apmc = document.getElementById("apmc").value;
-var crop = document.getElementById("crop").value;
+  try {
 
-var rate = "";
+    var response = await fetch("market.json");
+    var data = await response.json();
 
-if (crop == "ರಾಗಿ") {
-rate = "₹3500 / ಕ್ವಿಂಟಲ್";
+    var rate = "ದರ ಲಭ್ಯವಿಲ್ಲ";
+
+    for (var i = 0; i < data.prices.length; i++) {
+      if (data.prices[i].product == crop) {
+        rate = data.prices[i].price;
+      }
+    }
+
+    document.getElementById("rate").innerHTML =
+      "📍 ಜಿಲ್ಲೆ: " + district +
+      "<br>🏪 APMC: " + apmc +
+      "<br>🌾 ಬೆಳೆ: " + crop +
+      "<br>💰 ಇಂದಿನ ದರ: " + rate;
+
+  } catch (error) {
+
+    document.getElementById("rate").innerHTML =
+      "⚠️ ದರ ಪಡೆಯಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ.";
+
+  }
 }
-
-else if (crop == "ಮೆಕ್ಕೆಜೋಳ") {
-rate = "₹2200 / ಕ್ವಿಂಟಲ್";
-}
-
-else if (crop == "ಕಬ್ಬು") {
-rate = "₹3000 / ಟನ್";
-}
-
-else if (crop == "ಅಡಿಕೆ") {
-rate = "₹45000 / ಕ್ವಿಂಟಲ್";
-}
-
-else if (crop == "ತೆಂಗು") {
-rate = "₹25000 / ಕ್ವಿಂಟಲ್";
-}
-
-document.getElementById("rate").innerHTML =
-"📍 ಜಿಲ್ಲೆ: " + district +
-"<br>🏪 APMC: " + apmc +
-"<br>🌾 ಬೆಳೆ: " + crop +
-"<br>💰 ಇಂದಿನ ಮಾದರಿ ದರ: " + rate;
-
-}
-
 </script>
+
+
+
+
+
+
+
+
 
 </body>
 </html>
