@@ -3,38 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karnataka APMC Market Rates</title>
+
+<title>ಕರ್ನಾಟಕ ಕೃಷಿ ಮಾರುಕಟ್ಟೆ ದರ</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+select, button {
+  padding: 12px;
+  margin: 8px;
+  font-size: 16px;
+}
+
+#rate {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>ಕರ್ನಾಟಕ APMC ಮಾರುಕಟ್ಟೆ ದರ</h1>
+<h1>🌾 ಕರ್ನಾಟಕ ಕೃಷಿ ಮಾರುಕಟ್ಟೆ ದರ</h1>
 
-<p>ಈ ವೆಬ್‌ಸೈಟ್ ನಿರ್ಮಾಣ ಹಂತದಲ್ಲಿದೆ.</p>
-  <h3>ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</h3>
-  <h3>ಬೆಳೆ ಆಯ್ಕೆ ಮಾಡಿ</h3>
 <h3>ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</h3>
-<h3>APMC ಮಾರುಕಟ್ಟೆ ಆಯ್ಕೆ ಮಾಡಿ</h3>
 
-<select>
-<option>ಚಾಮರಾಜನಗರ APMC</option>
-<option>ಕೊಳ್ಳೇಗಾಲ APMC</option>
-<option>ಮೈಸೂರು APMC</option>
-<option>ಮಂಡ್ಯ APMC</option>
-<option>ಹಾಸನ APMC</option>
-</select>
-<select>
+<select id="district">
 <option>ಚಾಮರಾಜನಗರ</option>
 <option>ಮೈಸೂರು</option>
 <option>ಮಂಡ್ಯ</option>
 <option>ಹಾಸನ</option>
-<option>ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ</option>
-<option>ಬೆಂಗಳೂರು ನಗರ</option>
 <option>ತುಮಕೂರು</option>
-<option>ರಾಮನಗರ</option>
 <option>ಕೊಡಗು</option>
 <option>ಚಿಕ್ಕಮಗಳೂರು</option>
 <option>ಶಿವಮೊಗ್ಗ</option>
-<option>ಹಾಸನ</option>
 <option>ದಕ್ಷಿಣ ಕನ್ನಡ</option>
 <option>ಉಡುಪಿ</option>
 <option>ಬಳ್ಳಾರಿ</option>
@@ -54,57 +62,77 @@
 <option>ಯಾದಗಿರಿ</option>
 </select>
 
-<select>
-  <option>ರಾಗಿ</option>
-  <option>ಮೆಕ್ಕೆಜೋಳ</option>
-  <option>ಕಬ್ಬು</option>
-  <option>ಅಡಿಕೆ</option>
-  <option>ತೆಂಗು</option>
+<h3>APMC ಮಾರುಕಟ್ಟೆ ಆಯ್ಕೆ ಮಾಡಿ</h3>
+
+<select id="apmc">
+<option>ಚಾಮರಾಜನಗರ APMC</option>
+<option>ಕೊಳ್ಳೇಗಾಲ APMC</option>
+<option>ಮೈಸೂರು APMC</option>
+<option>ಮಂಡ್ಯ APMC</option>
+<option>ಹಾಸನ APMC</option>
 </select>
-<h3>ಇಂದಿನ ಮಾರುಕಟ್ಟೆ ದರ</h3>
 
-<p>ರಾಗಿ: ₹3500 / ಕ್ವಿಂಟಲ್</p>
-<p>ಮೆಕ್ಕೆಜೋಳ: ₹2200 / ಕ್ವಿಂಟಲ್</p>
-<p>ಕಬ್ಬು: ₹3000 / ಟನ್</p>
-<h3>ದರ ತಿಳಿಯಲು</h3>
-<h3>APMC ದರ ಪಟ್ಟಿ</h3>
+<h3>ಬೆಳೆ ಆಯ್ಕೆ ಮಾಡಿ</h3>
 
-<table border="1">
-<tr>
-<th>ಬೆಳೆ</th>
-<th>ದರ</th>
-</tr>
+<select id="crop">
+<option>ರಾಗಿ</option>
+<option>ಮೆಕ್ಕೆಜೋಳ</option>
+<option>ಕಬ್ಬು</option>
+<option>ಅಡಿಕೆ</option>
+<option>ತೆಂಗು</option>
+</select>
 
-<tr>
-<td>ರಾಗಿ</td>
-<td>₹3500 / ಕ್ವಿಂಟಲ್</td>
-</tr>
+<br>
 
-<tr>
-<td>ಮೆಕ್ಕೆಜೋಳ</td>
-<td>₹2200 / ಕ್ವಿಂಟಲ್</td>
-</tr>
-
-<tr>
-<td>ಕಬ್ಬು</td>
-<td>₹3000 / ಟನ್</td>
-</tr>
-
-</table>
 <button onclick="showRate()">ದರ ನೋಡಿ</button>
 
-<p id="rate"></p>
+<div id="rate"></div>
 
-<script>
-function showRate(){
-document.getElementById("rate").innerHTML =
-"ಇಂದಿನ ಮಾದರಿ ದರ: ರಾಗಿ ₹3500 / ಕ್ವಿಂಟಲ್";
-}
-</script>
+<h3>📱 Telegram Channel</h3>
 
 <a href="https://t.me/KarnatakaMarketprice" target="_blank">
 <button>Telegram ಗೆ ಸೇರಿ</button>
 </a>
+
+<script>
+
+function showRate() {
+
+var district = document.getElementById("district").value;
+var apmc = document.getElementById("apmc").value;
+var crop = document.getElementById("crop").value;
+
+var rate = "";
+
+if (crop == "ರಾಗಿ") {
+rate = "₹3500 / ಕ್ವಿಂಟಲ್";
+}
+
+else if (crop == "ಮೆಕ್ಕೆಜೋಳ") {
+rate = "₹2200 / ಕ್ವಿಂಟಲ್";
+}
+
+else if (crop == "ಕಬ್ಬು") {
+rate = "₹3000 / ಟನ್";
+}
+
+else if (crop == "ಅಡಿಕೆ") {
+rate = "₹45000 / ಕ್ವಿಂಟಲ್";
+}
+
+else if (crop == "ತೆಂಗು") {
+rate = "₹25000 / ಕ್ವಿಂಟಲ್";
+}
+
+document.getElementById("rate").innerHTML =
+"📍 ಜಿಲ್ಲೆ: " + district +
+"<br>🏪 APMC: " + apmc +
+"<br>🌾 ಬೆಳೆ: " + crop +
+"<br>💰 ಇಂದಿನ ಮಾದರಿ ದರ: " + rate;
+
+}
+
+</script>
 
 </body>
 </html>
