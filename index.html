@@ -94,6 +94,30 @@ select, button {
 <script>
 async function showRate() {
 
+ var districtSelect = document.getElementById("district");
+var apmcSelect = document.getElementById("apmc");
+
+var apmcData = {
+  "ಚಾಮರಾಜನಗರ": ["ಚಾಮರಾಜನಗರ APMC", "ಕೊಳ್ಳೇಗಾಲ APMC"],
+  "ಮೈಸೂರು": ["ಮೈಸೂರು APMC"],
+  "ಮಂಡ್ಯ": ["ಮಂಡ್ಯ APMC"],
+  "ಹಾಸನ": ["ಹಾಸನ APMC"]
+};
+
+districtSelect.addEventListener("change", function() {
+  var selectedDistrict = districtSelect.value;
+
+  apmcSelect.innerHTML = "";
+
+  var markets = apmcData[selectedDistrict] || [];
+
+  for (var i = 0; i < markets.length; i++) {
+    var option = document.createElement("option");
+    option.textContent = markets[i];
+    option.value = markets[i];
+    apmcSelect.appendChild(option);
+  }
+}); 
   var district = document.getElementById("district").value;
   var apmc = document.getElementById("apmc").value;
   var crop = document.getElementById("crop").value;
